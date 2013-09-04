@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PlotViewController.h
 //  TextAnalyzer
 //
 //  Created by Ivelin Ivanov on 9/4/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PlotViewController : UIViewController
 
 @end
