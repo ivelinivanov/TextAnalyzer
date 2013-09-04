@@ -23,6 +23,10 @@
 		55FD70F217D731CD0076A10F /* TextAnalyzerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FD70F117D731CD0076A10F /* TextAnalyzerTests.m */; };
 		55FD70FD17D73A5B0076A10F /* PlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FD70FC17D73A5B0076A10F /* PlotViewController.m */; };
 		55FD710017D741AE0076A10F /* TextAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FD70FF17D741AE0076A10F /* TextAnalyzer.m */; };
+		55FD710217D757520076A10F /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FD710117D757520076A10F /* libCorePlot-CocoaTouch.a */; };
+		55FD710417D757B80076A10F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FD710317D757B80076A10F /* QuartzCore.framework */; };
+		55FD710717D76C3A0076A10F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55FD710517D76C3A0076A10F /* Icon.png */; };
+		55FD710817D76C3A0076A10F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55FD710617D76C3A0076A10F /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		55FD70FC17D73A5B0076A10F /* PlotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotViewController.m; sourceTree = "<group>"; };
 		55FD70FE17D741AE0076A10F /* TextAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextAnalyzer.h; sourceTree = "<group>"; };
 		55FD70FF17D741AE0076A10F /* TextAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextAnalyzer.m; sourceTree = "<group>"; };
+		55FD710117D757520076A10F /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCorePlot-CocoaTouch.a"; path = "TextAnalyzer/libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		55FD710317D757B80076A10F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		55FD710517D76C3A0076A10F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		55FD710617D76C3A0076A10F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +74,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FD710417D757B80076A10F /* QuartzCore.framework in Frameworks */,
 				55FD70C917D731CD0076A10F /* CoreGraphics.framework in Frameworks */,
 				55FD70CB17D731CD0076A10F /* UIKit.framework in Frameworks */,
 				55FD70C717D731CD0076A10F /* Foundation.framework in Frameworks */,
+				55FD710217D757520076A10F /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +117,8 @@
 		55FD70C517D731CD0076A10F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55FD710117D757520076A10F /* libCorePlot-CocoaTouch.a */,
+				55FD710317D757B80076A10F /* QuartzCore.framework */,
 				55FD70C617D731CD0076A10F /* Foundation.framework */,
 				55FD70C817D731CD0076A10F /* CoreGraphics.framework */,
 				55FD70CA17D731CD0076A10F /* UIKit.framework */,
@@ -118,6 +130,8 @@
 		55FD70CC17D731CD0076A10F /* TextAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
+				55FD710517D76C3A0076A10F /* Icon.png */,
+				55FD710617D76C3A0076A10F /* Icon@2x.png */,
 				55FD70D517D731CD0076A10F /* AppDelegate.h */,
 				55FD70D617D731CD0076A10F /* AppDelegate.m */,
 				55FD70D817D731CD0076A10F /* Main.storyboard */,
@@ -238,9 +252,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FD710717D76C3A0076A10F /* Icon.png in Resources */,
 				55FD70DF17D731CD0076A10F /* Images.xcassets in Resources */,
 				55FD70D117D731CD0076A10F /* InfoPlist.strings in Resources */,
 				55FD70DA17D731CD0076A10F /* Main.storyboard in Resources */,
+				55FD710817D76C3A0076A10F /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +405,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextAnalyzer/TextAnalyzer-Prefix.pch";
 				INFOPLIST_FILE = "TextAnalyzer/TextAnalyzer-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ivelin.ivanov/Documents/Projects/TextAnalyzer/TextAnalyzer,
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -402,6 +423,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextAnalyzer/TextAnalyzer-Prefix.pch";
 				INFOPLIST_FILE = "TextAnalyzer/TextAnalyzer-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ivelin.ivanov/Documents/Projects/TextAnalyzer/TextAnalyzer,
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

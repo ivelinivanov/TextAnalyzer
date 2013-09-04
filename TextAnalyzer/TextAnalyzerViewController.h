@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TextAnalyzerViewController : UIViewController
+@interface TextAnalyzerViewController : UIViewController <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (strong, atomic) NSMutableDictionary *analyzedData;

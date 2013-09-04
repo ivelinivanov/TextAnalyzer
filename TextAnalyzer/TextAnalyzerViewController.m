@@ -8,8 +8,12 @@
 
 #import "TextAnalyzerViewController.h"
 #import "TextAnalyzer.h"
+#import "PlotViewController.h"
 
 @interface TextAnalyzerViewController ()
+{
+    NSInteger wordCount;
+}
 
 @end
 
@@ -20,6 +24,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.activityIndicator.hidden = YES;
+    self.textView.delegate = self;
 }
 
 
@@ -34,11 +39,39 @@
          NSLog(@"%@", result);
          
          self.analyzedData = result;
+         wordCount = 0;
+         for (NSString *key in [self.analyzedData allKeys])
+         {
+             wordCount += [self.analyzedData[key] integerValue];
+         }
+         
          
          [self.activityIndicator stopAnimating];
          
          [self performSegueWithIdentifier:@"toPlotView" sender:self];
      }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    PlotViewController *target = (PlotViewController *)segue.destinationViewController;
+    target.wordData = self.analyzedData;
+    target.wordCount = wordCount;
+}
+
+#pragma mark - TextView Delegate Methods
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    
+    if([text isEqualToString:@"\n"])
+    {
+        [self.textView resignFirstResponder];
+        
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end

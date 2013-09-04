@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CorePlot-CocoaTouch.h"
 
-@interface PlotViewController : UIViewController
+@interface PlotViewController : UIViewController <CPTPieChartDataSource, CPTPlotDataSource>
 
+@property (weak, nonatomic) IBOutlet CPTGraphHostingView *graphView;
+
+@property (copy, nonatomic) NSMutableDictionary *wordData;
+@property (assign, nonatomic) NSInteger wordCount;
+
+- (IBAction)dismissView:(id)sender;
 @end
